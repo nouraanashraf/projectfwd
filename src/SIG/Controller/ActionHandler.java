@@ -147,13 +147,10 @@ public class ActionHandler implements ActionListener{
                 invoiceFrame.setInvoiceHeaderTableModel(invoiceHeaderTableModel);
                 invoiceFrame.getHTbl().setModel(invoiceHeaderTableModel);
             }
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(invoiceFrame, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        } catch (ParseException ex) {
+        } catch (IOException | ParseException ex) {
             JOptionPane.showMessageDialog(invoiceFrame, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
     private void saveFile() {
         List<InvoiceHeader> invoicesArray= invoiceFrame.getInvoiceList();
         JFileChooser fc = new JFileChooser();
